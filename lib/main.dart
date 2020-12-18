@@ -8,5 +8,8 @@ void main()
     title: "Store Management",
     debugShowCheckedModeBanner: false,
     home: Login(),
+    theme: ThemeData(
+      primaryColor: Colors.green,
+    ),
   ));
 }

@@ -13,103 +13,104 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Container(
-            height: MediaQuery.of(context).size.height / 2.5,
+            padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+            height: MediaQuery.of(context).size.height * 0.4,
             width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100)),
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft:
+                    Radius.circular(MediaQuery.of(context).size.width / 4),
+              ),
             ),
             child: Column(
               children: <Widget>[
-                const Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: CircleAvatar(
-                    radius: 85,
-                    backgroundColor: Colors.transparent,
-                    backgroundImage: AssetImage('images/user.png'),
-                  ),
+                CircleAvatar(
+                  radius: 85,
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: AssetImage('images/user.png'),
                 ),
-                const Padding(
-                  padding: const EdgeInsets.only(left: 270),
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 26,
+                      ),
                     ),
-                  ),
+                  ],
                 )
               ],
             ),
           ),
-          const SizedBox(height: 25),
-          Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  hintText: 'User name',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  prefixIcon: Icon(Icons.person)),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.6,
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                      hintText: 'User name',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
+                      prefixIcon: Icon(Icons.person)),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.lock),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Forget Password?",
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                MaterialButton(
+                  minWidth: MediaQuery.of(context).size.width / 2,
+                  height: 45,
+                  color: Theme.of(context).primaryColor,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/db');
+                  },
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  shape: StadiumBorder()
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 5,),
+                  Text(
+                    "Register",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold),
+                  ),
+                ]),
+              ],
             ),
           ),
-          SizedBox(height: 25),
-          Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
-            child: TextFormField(
-              decoration: InputDecoration(
-                hintText: "Password",
-                prefixIcon: Icon(Icons.lock),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 220),
-            child: Text(
-              "Forget Password?",
-              style:
-              TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(height: 20),
-          MaterialButton(
-            minWidth: 300,
-            height: 45,
-            color: Colors.green,
-            onPressed: () {
-              Navigator.pushNamed(context, '/db');
-            },
-            child: Text(
-              "Login",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
-            ),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(30))),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(
-              "Don't have an accont?",
-              style:
-              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              "  Register",
-              style:
-              TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-            ),
-          ]),
         ]),
       ),
     );
