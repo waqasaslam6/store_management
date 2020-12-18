@@ -21,16 +21,16 @@ class _LoginState extends State<Login> {
             ),
             child: Column(
               children: <Widget>[
-                const Padding(
-                  padding: const EdgeInsets.only(top: 50),
+                 Padding(
+                  padding:  EdgeInsets.only(top: 50),
                   child: CircleAvatar(
                     radius: 85,
                     backgroundColor: Colors.transparent,
                     backgroundImage: AssetImage('images/user.png'),
                   ),
                 ),
-                const Padding(
-                  padding: const EdgeInsets.only(left: 270),
+                 Padding(
+                  padding:  EdgeInsets.only(left: 270),
                   child: Text(
                     "Login",
                     style: TextStyle(
@@ -45,9 +45,9 @@ class _LoginState extends State<Login> {
           ),
           const SizedBox(height: 25),
           Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
+            padding:  EdgeInsets.only(left: 25, right: 25),
             child: TextFormField(
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                   hintText: 'User name',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30))),
@@ -56,7 +56,7 @@ class _LoginState extends State<Login> {
           ),
           SizedBox(height: 25),
           Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
+            padding:  EdgeInsets.only(left: 25, right: 25),
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: "Password",
@@ -70,7 +70,7 @@ class _LoginState extends State<Login> {
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 220),
+            padding: EdgeInsets.only(left: 220),
             child: Text(
               "Forget Password?",
               style:
