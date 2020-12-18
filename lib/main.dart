@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'pages/Login.dart';
+import 'pages/Register.dart';
 
 void main()
 {
   runApp(MaterialApp(
-    title: "Store Management",
+    title: "Store App",
     debugShowCheckedModeBanner: false,
     home: Login(),
     theme: ThemeData(
       primaryColor: Colors.green,
     ),
+    routes: {
+      '/register': (context)=>Register(),
+      '/login': (context)=>Login()
+    },
   ));
 }
