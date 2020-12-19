@@ -11,6 +11,9 @@ class _LoginState extends State<Login> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 
   login() async {
+
+      // Navigate to the second screen using a named route.
+      Navigator.pushNamed(context, '/db');
     if (true) {
       if (!_formKey.currentState.validate())
       {
