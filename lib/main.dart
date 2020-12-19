@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:store_management/pages/Dashboard.dart';
 import 'pages/Login.dart';
 import 'pages/Register.dart';
 import 'pages/Dashboard.dart';
