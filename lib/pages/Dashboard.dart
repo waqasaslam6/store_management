@@ -54,7 +54,6 @@ class _DashboardState extends State<Dashboard> {
                 decoration: const BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
-
                 ),
                 child: Column(children: [
                   Padding(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'pages/Login.dart';
 import 'pages/Register.dart';
+import 'pages/Dashboard.dart';
 
 void main()
 {
@@ -14,7 +15,8 @@ void main()
     ),
     routes: {
       '/register': (context)=>Register(),
-      '/login': (context)=>Login()
+      '/login': (context)=>Login(),
+      '/db':(context)=>Dashboard()
     },
   ));
 }

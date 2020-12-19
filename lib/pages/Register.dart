@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_management/models/Users.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -9,20 +10,10 @@ class _RegisterState extends State<Register> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-
-  register() async
-  {
-    if (true) {
-      if (!_formKey.currentState.validate())
-      {
-        return print("Form is Invalid");
-      }
-      _formKey.currentState.save();
-      print("Form is Valid");
-
-    }
-
-  }
+  TextEditingController email = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController fullName = new TextEditingController();
+  TextEditingController phone = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +122,11 @@ class _RegisterState extends State<Register> {
                       minWidth: MediaQuery.of(context).size.width / 2,
                       height: 45,
                       color: Theme.of(context).primaryColor,
-                      onPressed: register,
+                      onPressed: (){
+                        String userEmail = email.text;
+                        String userPassword = password.text;
+                        Users.login(_formKey,userEmail,userPassword);
+                      },
                       child: Text(
                         "Register",
                         style: TextStyle(

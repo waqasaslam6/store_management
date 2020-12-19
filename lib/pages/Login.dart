@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_management/models/Users.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -9,18 +10,8 @@ class _LoginState extends State<Login> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-
-  login() async {
-    if (true) {
-      if (!_formKey.currentState.validate())
-      {
-        return print("Form is Invalid");
-      }
-      _formKey.currentState.save();
-      print("Form is Valid");
-
-    }
-  }
+  TextEditingController email = new TextEditingController();
+  TextEditingController password = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +63,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextFormField(
+                    controller: email,
                     validator: (val)
                     {
                       if(val.isEmpty)
@@ -85,6 +77,8 @@ class _LoginState extends State<Login> {
                         prefixIcon: Icon(Icons.person)),
                   ),
                   TextFormField(
+                    controller: password,
+                    obscureText: true,
                     validator: (val)
                     {
                       if(val.isEmpty)
@@ -112,7 +106,11 @@ class _LoginState extends State<Login> {
                     minWidth: MediaQuery.of(context).size.width / 2,
                     height: 45,
                     color: Theme.of(context).primaryColor,
-                    onPressed: login,
+                    onPressed: (){
+                      String userEmail = email.text;
+                      String userPassword = password.text;
+                      Users.login(_formKey,userEmail,userPassword);
+                    },
                     child: Text(
                       "Login",
                       style: TextStyle(
