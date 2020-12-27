@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store_management/models/Users.dart';
+import 'package:store_management/pages/Login.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -147,7 +149,7 @@ class _RegisterState extends State<Register> {
                         FlatButton(
                           onPressed: ()
                           {
-                            Navigator.pushNamed(context, '/login');
+                            Get.to(Login());
                           },
                           child: Text(
                             "Login",

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store_management/models/DashItems.dart';
 import 'package:store_management/pages/Login.dart';
+import 'package:store_management/pages/warehouse/Warehouse.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -74,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
                 {
                   case 0:
                     {
-                      Navigator.pushNamed(context, '/login');
+                     Get.to(Warehouse());
                     }
                     break;
                   case 1:

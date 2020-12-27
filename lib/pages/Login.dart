@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store_management/models/Users.dart';
+import 'package:store_management/pages/Register.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -13,6 +15,8 @@ class _LoginState extends State<Login> {
 
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
+  Users user;
+
 
   @override
   Widget build(BuildContext context) {
@@ -108,9 +112,7 @@ class _LoginState extends State<Login> {
                     height: 45,
                     color: Theme.of(context).primaryColor,
                     onPressed: (){
-                      String userEmail = email.text;
-                      String userPassword = password.text;
-                      Users.login(_formKey,userEmail,userPassword);
+                      Users.login(_formKey,email.text,password.text);
                     },
                     child: Text(
                       "Login",
@@ -132,7 +134,7 @@ class _LoginState extends State<Login> {
                     FlatButton(
                       onPressed: ()
                       {
-                        Navigator.pushNamed(context, '/register');
+                       Get.to(Register());
                       },
                       child: Text(
                         "Register",

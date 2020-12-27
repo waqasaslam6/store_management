@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:store_management/pages/Dashboard.dart';
 class Users{
    String fullName;
    String phone;
@@ -7,6 +10,7 @@ class Users{
   Users(this.fullName,this.phone,this.email,this.password);
 
    static login(_formKey,email,password) async {
+     Get.to(Dashboard());
     if (true) {
       if (!_formKey.currentState.validate())
       {
